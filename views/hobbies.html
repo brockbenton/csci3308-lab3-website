@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Brock Benton</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="hobbies.html">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                </ul>
+                <img src="../resources/img/world.png" alt="World Icon" height="30">
+                <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1>Hobbies</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../resources/img/1559466-middle-2341801567.png" class="card-img-top" alt="Blockchain Technology">
+                    <div class="card-body">
+                        <h5 class="card-title">Blockchain Technology</h5>
+                        <p class="card-text">I spend a lot of my time researching how blockchain technology works, and how this technology might impact our future.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../resources/img/skiing.jpg" class="card-img-top" alt="Skiing">
+                    <div class="card-body">
+                        <h5 class="card-title">Skiing</h5>
+                        <p class="card-text">This last year I got into skiing because I wanted to participate in a winter sport. I really like skiing because it is freeing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../resources/img/catan.png" class="card-img-top" alt="Catan">
+                    <div class="card-body">
+                        <h5 class="card-title">Catan</h5>
+                        <p class="card-text">I enjoy playing the board game 'Catan' because I like thinking about strategy and probabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <a href="https://github.com/brockbenton" target="_blank">
+            <img src="../resources/img/github.png" alt="GitHub">
+        </a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-toggle');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                btn.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                btn.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            document.querySelector('.theme-toggle').textContent = 'Light Mode';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Simple styling for personal website */
+
+/* Light mode (default) */
+:root {
+    --bg-gradient-start: #f8f9fa;
+    --bg-gradient-end: #e9ecef;
+    --text-color: #333;
+    --card-bg: white;
+    --accent-color: #7badb6;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+    --bg-gradient-start: #1a1a2e;
+    --bg-gradient-end: #16213e;
+    --text-color: #f0f0f0;
+    --card-bg: #2a2a4a;
+    --accent-color: #7badb6;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--accent-color);
+}
+
+.navbar-brand img {
+    height: 30px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Profile image */
+.profile-img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--accent-color);
+    padding: 20px 0;
+}
+
+footer img {
+    height: 30px;
+}
+
+/* Card styling with hover effect */
+.card {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Project image styling */
+.project-img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Accordion styling */
+.accordion-body {
+    padding: 2rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(123, 173, 182, 0.25);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .card {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .accordion-item {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .accordion-button {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .table {
+    color: var(--text-color);
+}

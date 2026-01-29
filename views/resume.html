@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Brock Benton</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="hobbies.html">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                </ul>
+                <img src="../resources/img/world.png" alt="World Icon" height="30">
+                <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1>Brock Benton</h1>
+        <p>brockbentons@gmail.com | linkedin.com/in/brockbenton | github.com/brockbenton</p>
+
+        <a href="../resources/img/brock_resume_general_swe.pdf" target="_blank" download="brock_benton_resume.pdf">
+            <button class="btn btn-primary">Download PDF</button>
+        </a>
+
+        <hr>
+
+        <h2>Education</h2>
+        <table class="table">
+            <tr>
+                <td><strong>University of Colorado Boulder</strong></td>
+                <td class="text-end">Boulder, CO</td>
+            </tr>
+            <tr>
+                <td><em>B.A. in Computer Science, B.A. in Economics (GPA: 3.97)</em></td>
+                <td class="text-end"><em>Expected May 2028</em></td>
+            </tr>
+        </table>
+        <ul>
+            <li>Honors: Boettcher Scholar, Undergraduate Enrichment Program, Engineering Honors Program</li>
+            <li>Clubs: Blockchain Club (Co-President), CS Undergraduate Advising Committee (Head of Academics)</li>
+            <li>Relevant Coursework: Algorithms, Data Structures, Software Development, Algorithmic Economics</li>
+        </ul>
+
+        <hr>
+
+        <h2>Work Experience</h2>
+        <table class="table">
+            <tr>
+                <td><strong>Information Technology Manager</strong></td>
+                <td class="text-end">May 2023 - Aug. 2025</td>
+            </tr>
+            <tr>
+                <td><em>Alamosa School District</em></td>
+                <td class="text-end"><em>Alamosa, CO</em></td>
+            </tr>
+        </table>
+        <ul>
+            <li>Led IT support operations for 3000+ devices across a district serving 2100+ students and 440+ staff</li>
+            <li>Oversaw and coordinated a summer tech team, facilitating task delegation and team workflows</li>
+            <li>Streamlined laptop imaging processes using FOG Project and FlexOS</li>
+            <li>Performed hardware repairs on Chromebooks and Windows laptops</li>
+        </ul>
+
+        <hr>
+
+        <h2>Projects</h2>
+
+        <table class="table">
+            <tr>
+                <td><strong>Base Bets: Onchain Escrow</strong></td>
+                <td class="text-end">Dec. 2025</td>
+            </tr>
+            <tr>
+                <td><em>TypeScript, Node.js, Smart Contracts</em></td>
+                <td></td>
+            </tr>
+        </table>
+        <ul>
+            <li>Architected and deployed smart contract system with account abstraction for gasless transactions</li>
+            <li>Integrated external REST APIs to create hybrid oracle system for real-world event resolution</li>
+        </ul>
+
+        <table class="table">
+            <tr>
+                <td><strong>Distributed Consensus System</strong></td>
+                <td class="text-end">Nov. 2025</td>
+            </tr>
+            <tr>
+                <td><em>C++, TCP Sockets, Multi-threading</em></td>
+                <td></td>
+            </tr>
+        </table>
+        <ul>
+            <li>Built distributed peer-to-peer network with cryptographic proof-of-work validation</li>
+            <li>Implemented multi-threaded TCP server handling concurrent client connections</li>
+        </ul>
+
+        <table class="table">
+            <tr>
+                <td><strong>Git Infrastructure & CI/CD Pipeline</strong></td>
+                <td class="text-end">Oct. 2025</td>
+            </tr>
+            <tr>
+                <td><em>Docker, Nginx, PostgreSQL, Python</em></td>
+                <td></td>
+            </tr>
+        </table>
+        <ul>
+            <li>Engineered containerized Git infrastructure using Docker Compose</li>
+            <li>Developed automated CI/CD pipeline with webhook-driven deployments</li>
+        </ul>
+
+        <hr>
+
+        <h2>Technical Skills</h2>
+        <table class="table">
+            <tr>
+                <td><strong>Languages:</strong></td>
+                <td>C++, Python, TypeScript, JavaScript, SQL, Bash</td>
+            </tr>
+            <tr>
+                <td><strong>Backend:</strong></td>
+                <td>Node.js, Docker, PostgreSQL, Nginx, REST APIs, Linux</td>
+            </tr>
+            <tr>
+                <td><strong>Blockchain:</strong></td>
+                <td>Solidity, Ethereum, Smart Contracts, Hardhat, ethers.js</td>
+            </tr>
+        </table>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <a href="https://github.com/brockbenton" target="_blank">
+            <img src="../resources/img/github.png" alt="GitHub">
+        </a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-toggle');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                btn.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                btn.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            document.querySelector('.theme-toggle').textContent = 'Light Mode';
+        }
+    </script>
+</body>
+</html>
