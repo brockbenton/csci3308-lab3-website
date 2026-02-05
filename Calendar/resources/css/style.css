@@ -1,0 +1,92 @@
+h1{
+  text-align: center;
+  padding-top: 2%;
+}
+
+body {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+.event:hover {
+  cursor: pointer;
+}
+
+/* Provided hidden helper (keeps flow but hidden) */
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+/* Ensure calendar fills viewport */
+#calendar {
+  height: 100vh !important;
+}
+
+/* Left column container (kept from template) */
+.custom-container {
+  width: 100%;
+  padding: 20%;
+}
+
+/* Day column header styling to match Bootstrap look and provide visual separation */
+#calendar .day {
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+/* Make day columns stretch and allow events area to scroll if needed */
+#calendar .col-sm {
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+/* Reserve a content area for event cards inside each day */
+#calendar .events {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+  overflow-y: auto;
+}
+
+/* Modal form tweaks - limit height and enable scrolling if content overflows */
+#event_modal .modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Small visual tweaks for form labels in the modal */
+#event_modal .mb-3 label {
+  font-weight: 500;
+}
+
+/* Styling for event cards inserted into the calendar */
+.event {
+  background-color: #ffffff; /* ensure contrast on the page background */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* Make links inside event cards wrap and be readable */
+.event a {
+  word-break: break-all;
+}
+
+/* Utility: ensure hidden groups (like remote_url_group when not shown) match Bootstrap spacing when visible/hidden */
+#remote_url_group,
+#location_group {
+  transition: all 0.12s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-container {
+    padding: 4%;
+  }
+
+  #calendar .col-sm {
+    min-height: 120px;
+  }
+}
